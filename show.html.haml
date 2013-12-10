@@ -3,7 +3,7 @@
   #info
     #title
       %h1= @movie.title
-
+    
     #description
       %p= @movie.description
 
@@ -21,15 +21,17 @@
       %tbody
         - @showtimes.each do |showtime|
           %tr
-            %td= showtime.location
-            %td= showtime.time
+            %td
+              = showtime.location
+            %td
+              = showtime.time
 
     = form_for [@movie, @showtime] do |f|
       .location
         = f.label :location
-        = f.text_field :location
+        = f.text_field :location 
       .time
-        = f.label :time 
+        = f.label :time
         = f.text_field :time
       .submit
-        = f.submit 'Create Showtime', :class => "button"
+        = f.submit 'Create Showtime', :class => "button" 
